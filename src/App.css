@@ -1,0 +1,23 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    /* Use the new font */
+    background-color: theme('colors.ncvColor.background');
+    /* Use new background color */
+    color: theme('colors.ncvColor.text');
+    /* Use new text color */
+}
+
+@media (max-width: 768px) {
+
+    /* Adjust padding and margins for mobile */
+    .container {
+        padding: 1rem;
+    }
+
+    h1,
+    h2,
+    h3 {
+        font-size: 1.5rem;
+        /* Adjust heading sizes */
+    }
+}

@@ -13,7 +13,9 @@ export default {
           dark: "#087298",
           grey: "#7da7b0",
           blue: "#1a6db5",
-          orange: "#e76c1d"
+          orange: "#e76c1d",
+          background: "#f0f4f8", // New background color
+          text: "#333333", // New text color
         }
       }
     },
