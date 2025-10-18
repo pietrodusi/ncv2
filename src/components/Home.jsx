@@ -1,9 +1,6 @@
 import videoSource from '../images/istockphoto-1456786353-640_adpp_is.mp4';
 import chiSiamoImage1 from '../images/istockphoto-968955866-1024x1024.jpg';
 import chiSiamoImage2 from '../images/istockphoto-2217207866-1024x1024.jpg';
-import Servizi from './Servizi';
-import ChiSiamo from './ChiSiamo';
-import Contatti from './Contatti';
 
 export default function Home() {
   return (
@@ -92,12 +89,6 @@ export default function Home() {
           <img src={chiSiamoImage2} alt="Nuova Clinica Veterinaria val d'Elsa" className="w-full lg:w-1/2 h-64 md:h-[400px] lg:h-[500px] object-cover mb-8 lg:mb-0 lg:ml-12 lg:pl-[50px]" />
         </div>
       </section>
-      <div className="my-24" />
-      <Servizi />
-      <div className="my-16" />
-      <ChiSiamo />
-      <div className="my-24" />
-      <Contatti />
     </section>
   );
 };
