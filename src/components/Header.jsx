@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import logo from '../images/LOGO DEFINITIVO-03.png';
 
-export default function Header (props) {
+export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navbarButtons = ["Home", "Chi siamo", "Servizi", "Il nostro team", "Contatti"];
@@ -13,7 +13,6 @@ export default function Header (props) {
           <img
             src={logo}
             alt="Nuova Clinica Veterinaria val d'Elsa"
-            onClick={props.handleClick}
             id="Home"
             className="max-h-[60px] md:max-h-full w-auto cursor-pointer"
           />
@@ -25,12 +24,11 @@ export default function Header (props) {
             ☰
           </button>
           <nav
-            className={`${
-              isOpen ? 'block' : 'hidden'
-            } absolute bg-white left-0 top-[80px] w-full shadow-md lg:shadow-none lg:static lg:w-auto lg:block z-40`}
+            className={`${isOpen ? 'block' : 'hidden'
+              } absolute bg-white left-0 top-[80px] w-full shadow-md lg:shadow-none lg:static lg:w-auto lg:block z-40`}
           >
             <ul className="flex flex-col lg:flex-row lg:space-x-12 text-center lg:text-left font-semibold text-lg md:text-xl py-4 lg:py-0">
-              {navbarButtons.map((button) => 
+              {navbarButtons.map((button) =>
                 <li key={button}>
                   <button
                     name={button.replace(/ /g, '')}
@@ -41,7 +39,7 @@ export default function Header (props) {
                         const sectionId = button.replace(/ /g, "");
                         const section = document.getElementById(sectionId);
                         if (section) {
-                          const yOffset = -100; 
+                          const yOffset = -100;
                           const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
                           window.scrollTo({ top: y, behavior: "smooth" });
                         }

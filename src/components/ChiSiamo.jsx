@@ -1,13 +1,12 @@
-import React from 'react';
 import team from '../data/team.json';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 
-export default function ChiSiamo () {
+export default function ChiSiamo() {
   return (
-   <section className="relative py-16 max-w-7xl mx-auto px-4" id="Ilnostroteam">
+    <section className="relative py-16 max-w-7xl mx-auto px-4" id="Ilnostroteam">
       <h2 className="text-3xl md:text-4xl font-semibold text-center mb-16 md:mb-24">Il nostro team</h2>
       <Swiper
         modules={[Navigation]}

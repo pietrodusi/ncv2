@@ -1,4 +1,3 @@
-import React from 'react';
 import servizi from '../data/servizi.json';
 
 export default function Servizi() {

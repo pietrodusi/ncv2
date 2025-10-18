@@ -1,5 +1,3 @@
-import React from 'react';
-import logo from '../images/LOGO DEFINITIVO-09.png';
 import videoSource from '../images/istockphoto-1456786353-640_adpp_is.mp4';
 import chiSiamoImage1 from '../images/istockphoto-968955866-1024x1024.jpg';
 import chiSiamoImage2 from '../images/istockphoto-2217207866-1024x1024.jpg';
@@ -7,7 +5,7 @@ import Servizi from './Servizi';
 import ChiSiamo from './ChiSiamo';
 import Contatti from './Contatti';
 
-export default function Home(props) {
+export default function Home() {
   return (
     <section id="Home">
       {/* HERO */}
@@ -71,11 +69,11 @@ export default function Home(props) {
       {/* CHI SIAMO */}
       <section id="Chisiamo" className="pt-16 md:pt-32">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-center leading-relaxed px-4">
-          <img src={chiSiamoImage1} alt="Nuova Clinica Veterinaria val d'Elsa" className="w-full lg:w-1/2 h-64 md:h-[400px] lg:h-[500px] object-cover mb-8 lg:mb-0 lg:mr-12 lg:pr-[50px]"/>
+          <img src={chiSiamoImage1} alt="Nuova Clinica Veterinaria val d'Elsa" className="w-full lg:w-1/2 h-64 md:h-[400px] lg:h-[500px] object-cover mb-8 lg:mb-0 lg:mr-12 lg:pr-[50px]" />
           <div className="w-full lg:w-1/2">
             <div className="text-2xl md:text-3xl font-semibold mb-4">La nostra missione</div>
             <div className="text-justify">
-              Alla Nuova Clinica Veterinaria Val d’Elsa crediamo in una medicina che non si limita a curare, ma che lavora ogni giorno per prevenire, educare e accompagnare.<br/>
+              Alla Nuova Clinica Veterinaria Val d’Elsa crediamo in una medicina che non si limita a curare, ma che lavora ogni giorno per prevenire, educare e accompagnare.<br />
               Il benessere animale è al centro di ogni nostra decisione, e l'attenzione verso i nostri pazienti e le loro famiglie va oltre il gesto clinico.
             </div>
           </div>
@@ -86,15 +84,15 @@ export default function Home(props) {
               Sempre un passo in più
             </div>
             <div className="text-justify">
-              Ci impegniamo, ogni giorno, a fare un passo in più.<br/>
-              Significa ascoltare davvero, spiegare con chiarezza, essere presenti anche dopo una visita, un intervento o una telefonata.<br/>
+              Ci impegniamo, ogni giorno, a fare un passo in più.<br />
+              Significa ascoltare davvero, spiegare con chiarezza, essere presenti anche dopo una visita, un intervento o una telefonata.<br />
               Significa non accontentarsi del “sufficiente”, ma cercare sempre quel dettaglio in più che può fare la differenza nel percorso di cura.
             </div>
           </div>
-          <img src={chiSiamoImage2} alt="Nuova Clinica Veterinaria val d'Elsa" className="w-full lg:w-1/2 h-64 md:h-[400px] lg:h-[500px] object-cover mb-8 lg:mb-0 lg:ml-12 lg:pl-[50px]"/>
+          <img src={chiSiamoImage2} alt="Nuova Clinica Veterinaria val d'Elsa" className="w-full lg:w-1/2 h-64 md:h-[400px] lg:h-[500px] object-cover mb-8 lg:mb-0 lg:ml-12 lg:pl-[50px]" />
         </div>
-      </section>  
-      <div className="my-24" /> 
+      </section>
+      <div className="my-24" />
       <Servizi />
       <div className="my-16" />
       <ChiSiamo />
