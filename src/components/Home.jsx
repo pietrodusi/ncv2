@@ -4,9 +4,9 @@ import chiSiamoImage2 from '../images/istockphoto-2217207866-1024x1024.jpg';
 
 export default function Home() {
   return (
-    <section id="Home">
+    <section id="Home" className="">
       {/* HERO */}
-      <div className="text-white flex h-[400px] md:h-[600px] lg:h-[800px]">
+      <div className="text-white flex md:h-[600px] lg:h-[1000px] ">
         <div className="relative w-full overflow-hidden flex-1 h-full">
           {/* Background video */}
           <video
