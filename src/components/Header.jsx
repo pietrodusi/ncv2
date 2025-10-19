@@ -1,109 +1,92 @@
-import { useState, useEffect, useRef } from 'react';
-import logo from '../images/LOGO DEFINITIVO-03.png';
+import { useState, useEffect } from "react"
+import { Menu, X } from "lucide-react"
+import { Button } from "./ui/Button"
+import logo from '../public/LOGO DEFINITIVO-03.png';
 
-export default function Header() {
-  const minHeaderHeight = 80;
-  const maxHeaderHeight = 250;
-
-  const [isOpen, setIsOpen] = useState(false);
-  const [isTop, setIsTop] = useState(true);
-  const [headerHeight, setHeaderHeight] = useState(() =>
-    typeof window !== 'undefined' && window.innerWidth >= 768 ? maxHeaderHeight : minHeaderHeight
-  );
-
-  const headerRef = useRef(null);
-
-  const navbarButtons = ["Home", "Chi siamo", "Servizi", "Il nostro team", "Contatti"];
+export function Header() {
+  const [isScrolled, setIsScrolled] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   useEffect(() => {
-    const onScroll = () => {
-      const newIsTop = window.scrollY <= 5;
-      setIsTop(newIsTop);
-    };
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20)
+    }
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-
-    // Cleanup function removes the event listener when component unmounts
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
-  useEffect(() => {
-    const computeHeights = () => {
-      const expanded = window.innerWidth >= 768 ? maxHeaderHeight : minHeaderHeight;
-      const collapsed = window.innerWidth >= 768 ? minHeaderHeight : 60;
-      setHeaderHeight(isTop ? expanded : collapsed);
-    };
-
-    computeHeights();
-    const onResize = () => computeHeights();
-    window.addEventListener('resize', onResize);
-
-    // Cleanup function removes the event listener when component unmounts
-    return () => window.removeEventListener('resize', onResize);
-  }, [isTop]);
+  const navItems = [
+    { label: "Home", href: "home" },
+    { label: "Chi siamo", href: "chi-siamo" },
+    { label: "Servizi", href: "servizi" },
+    { label: "Il nostro team", href: "team" },
+    { label: "Contatti", href: "contatti" },
+  ]
 
   return (
-    <div
-      className="sticky top-0 z-50"
-      style={{ height: `${minHeaderHeight}px` }} // Fixed container height
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all ease-in-out ${isScrolled ? "duration-700 bg-background/95 backdrop-blur-md shadow-md" : "duration-200 bg-transparent"} ${isMobileMenuOpen ? "" : ""}`}
     >
-      <header
-        ref={headerRef}
-        className="bg-white w-full shadow-md shadow-ncvColor-grey flex justify-center transition-all duration-300 mt-2"
-        style={{ height: `${headerHeight}px` }}
-      >
-        <div className="container flex justify-between items-center h-full py-2 md:px-0 max-w-7xl">
-          <div className="h-full m-auto">
-            <img
-              src={logo}
-              alt="Nuova Clinica Veterinaria val d'Elsa"
-              id="Home"
-              className="max-h-[60px] md:max-h-full w-auto flex items-center pr-4"
-            />
-          </div>
+      <div className="container mx-auto px-4 lg:px-8">
+        <div className="flex items-center justify-between h-20">
+          <a href="/" className="flex items-center gap-2 group">
+            <div className={`relative w-34 ${isScrolled ? "md:ml-40" : "md:w-150 md:pt-50"} transition-all duration-400 ease-in-out`}>
+              <img src={logo} alt="NCV Logo" className="w-full h-full object-contain" />
+            </div>
+          </a>
 
-          <button
-            className="block lg:hidden text-3xl text-ncvColor-blue focus:outline-none"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle navigation"
-          >
-            ☰
-          </button>
-          <nav
-            className={`${isOpen ? 'block' : 'hidden'
-              } shadow-md lg:shadow-none lg:static lg:block z-40  max-w-[80%]`}
-            style={{ top: `${headerHeight}px` }}
-          >
-            <ul className="flex flex-col lg:flex-row lg:space-x-12 text-center lg:text-left font-semibold text-lg md:text-xl py-4 lg:py-0">
-              {navbarButtons.map((button) =>
-                <li key={button}>
-                  <button
-                    name={button.replace(/ /g, '')}
-                    onClick={() => {
-                      if (button === "Home") {
-                        window.scrollTo({ top: 0, behavior: "smooth" });
-                      } else {
-                        const sectionId = button.replace(/ /g, "");
-                        const section = document.getElementById(sectionId);
-                        if (section) {
-                          const yOffset = -100;
-                          const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
-                          window.scrollTo({ top: y, behavior: "smooth" });
-                        }
-                      }
-                      setIsOpen(false);
-                    }}
-                    className="text-ncvColor-blue hover:text-ncvColor-orange transition px-4 py-2 block"
-                  >
-                    {button}
-                  </button>
-                </li>)}
-            </ul>
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center gap-8">
+            {navItems.map((item) => (
+              <a
+                key={item.href}
+                onClick={() => document.getElementById(item.href).scrollIntoView()}
+                className="text-m font-medium text-foreground hover:text-primary transition-colors relative group text-ncvColor-blue hover:cursor-pointer"
+              >
+                {item.label}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-ncvColor-orange transition-all group-hover:w-full" />
+              </a>
+            ))}
+            {/* <Button size="sm" className="bg-accent hover:bg-accent-light text-white">
+              Prenota visita
+            </Button> */}
           </nav>
-        </div>
-      </header>
-    </div>
-  );
-}
 
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="md:hidden p-2 text-foreground hover:text-primary transition-colors"
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+
+        {/* Mobile Navigation */}
+        {
+          isMobileMenuOpen && (
+            <nav className="md:hidden py-4 border-t border-surface-dark">
+              <div className="flex flex-col gap-4">
+                {navItems.map((item) => (
+                  <a
+                    key={item.href}
+                    onClick={() => {
+                      setIsMobileMenuOpen(false)
+                      document.getElementById(item.href).scrollIntoView()
+                    }}
+                    className="text-sm font-medium text-foreground hover:text-primary transition-colors py-2"
+                  >
+                    {item.label}
+                  </a>
+                ))}
+                {/* <Button size="sm" className="bg-accent hover:bg-accent-light text-white w-full">
+                Prenota visita
+              </Button> */}
+              </div>
+            </nav>
+          )
+        }
+      </div >
+    </header >
+  )
+}
