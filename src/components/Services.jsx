@@ -133,7 +133,7 @@ export function Services() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-block mb-4">
             <span className="text-sm font-semibold text-primary bg-primary/10 px-4 py-2 rounded-full">
-              I nostri servizi
+              Servizi
             </span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 text-balance">

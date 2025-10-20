@@ -22,7 +22,7 @@ export function Mission() {
           <div>
             <div className="inline-block mb-4">
               <span className="text-sm font-semibold text-primary bg-primary/10 px-4 py-2 rounded-full">
-                La nostra missione
+                Chi siamo
               </span>
             </div>
 

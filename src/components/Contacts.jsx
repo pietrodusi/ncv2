@@ -2,19 +2,18 @@ import { MapPin, Phone, Mail, Clock } from "lucide-react"
 
 export function Contacts() {
   return (
-    <section id="contatti" className="py-24 bg-muted/30 pb-54">
+    <section id="contatti" className="py-24 bg-muted/80 pb-54">
       <div className="container mx-auto px-4 lg:px-8">
 
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-20">
           <div className="inline-block mb-4">
             <span className="text-sm font-semibold text-primary bg-primary/10 px-4 py-2 rounded-full">
-              Come raggiungerci
+              Contatti
             </span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 text-balance">
-            Cure complete per i vostri animali
+            Come raggiungerci
           </h2>
-
         </div>
 
         <div className="flex flex-col lg:flex-row gap-12">

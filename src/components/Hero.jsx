@@ -30,9 +30,9 @@ export function Hero() {
       <div className="container mx-auto px-4 lg:px-8 relative z-30">
         <div className="max-w-3xl md:max-w-6xl md:ml-40">
           <div className="inline-block mb-6">
-            <span className="text-sm font-semibold text-accent bg-accent/10 px-4 py-2 rounded-full">
-              {/* Dal 2016 al vostro servizio */}
-            </span>
+            {/* <span className="text-sm font-semibold text-accent bg-accent/10 px-4 py-2 rounded-full">
+              Dal 2016 al vostro servizio
+            </span> */}
           </div>
 
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-100 leading-tight text-balance">

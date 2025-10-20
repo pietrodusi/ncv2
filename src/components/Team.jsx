@@ -4,112 +4,118 @@ import "swiper/css"
 import "swiper/css/navigation"
 import "swiper/css/pagination"
 
+import SashaPadula from '../public/team/SashaPadula.jpg'
+import FrancescoPaesano from '../public/team/FrancescoPaesano.jpg'
+import AlessandroMarigliano from '../public/team/AlessandroMarigliano.jpg'
+import CatalinaAlbert from '../public/team/CatalinaAlbert.jpg'
+import GiuliaBiagioni from '../public/team/GiuliaBiagioni.jpg'
+import GiacomoDusi from '../public/team/GiacomoDusi.jpg'
+import LauraCarraresi from '../public/team/LauraCarraresi.jpg'
+
+import placeholder from '../public/team/LOGO DEFINITIVO-09.png'
+
 const teamData = [
   {
     id: 1,
     name: "Dott. Giacomo Dusi",
     position: "Direttore sanitario",
-    image: "hero-image.jpg",
+    image: GiacomoDusi,
     description: "Si occupa principalmente di chirurgia, chirurgia mini-invasiva ed endoscopia.",
   },
   {
     id: 2,
     name: "Dott.ssa Laura Carraresi",
     position: "Veterinaria",
-    image: "/placeholder.svg?height=400&width=400",
+    image: LauraCarraresi,
     description: "Si occupa principalmente di ecografia, diagnostica per immagini e medicina interna.",
   },
   {
     id: 3,
     name: "Dott.ssa Giulia Biagioni",
     position: "Veterinaria",
-    image: "/placeholder.svg?height=400&width=400",
+    image: GiuliaBiagioni,
     description: "Si occupa principalmente di nutrizione, riproduzione e medicina interna.",
   },
   {
     id: 4,
     name: "Dott.ssa Catalina Albert",
     position: "Veterinaria",
-    image: "/placeholder.svg?height=400&width=400",
+    image: CatalinaAlbert,
     description: "Si occupa principalmente di chirurgia e medicina interna.",
   },
   {
     id: 5,
     name: "Dott. Giovanni Magnanelli",
     position: "Veterinario",
-    image: "/placeholder.svg?height=400&width=400",
+    image: placeholder,
     description: "Si occupa principalmente di anestesia e terapia del dolore.",
   },
   {
     id: 6,
     name: "Dott. Francesco Paesano",
     position: "Veterinario",
-    image: "/placeholder.svg?height=400&width=400",
+    image: FrancescoPaesano,
     description: "Si occupa di odontostomatologia e chirurgia maxillo-facciale.",
   },
   {
     id: 7,
     name: "Dott. Giuseppe Bartoletta",
     position: "Veterinario",
-    image: "/placeholder.svg?height=400&width=400",
+    image: placeholder,
     description: "Si occupa di ortopedia.",
   },
   {
     id: 8,
     name: "Dott.ssa Chiara Pescatori",
     position: "Veterinaria",
-    image: "/placeholder.svg?height=400&width=400",
+    image: placeholder,
     description: "Si occupa di cardiologia ed ecografia.",
   },
   {
     id: 9,
     name: "Dott. Daniele Betti",
     position: "Veterinario",
-    image: "/placeholder.svg?height=400&width=400",
+    image: placeholder,
     description: "Si occupa di oftalmologia.",
   },
   {
     id: 10,
     name: "Dott. Alessandro Marigliano",
     position: "Veterinario",
-    image: "/placeholder.svg?height=400&width=400",
+    image: AlessandroMarigliano,
     description: "Si occupa di animali esotici.",
   },
   {
     id: 11,
     name: "Dott.ssa Silvia Porcelli",
     position: "Veterinaria",
-    image: "/placeholder.svg?height=400&width=400",
+    image: placeholder,
     description: "Si occupa di oncologia.",
   },
   {
     id: 12,
     name: "Dott. Emanuele Mussi",
     position: "Veterinario",
-    image: "/placeholder.svg?height=400&width=400",
+    image: placeholder,
     description: "Si occupa di endoscopia.",
   },
   {
     id: 13,
     name: "Samantha Ventani",
     position: "Tecnico veterinario",
-    image: "/placeholder.svg?height=400&width=400",
+    image: placeholder,
     description: "Tecnico veterinario specializzato nell'assistenza clinica.",
   },
   {
     id: 14,
     name: "Sasha Padula",
     position: "Tecnico veterinario",
-    image: "/SashaPadula.png",
+    image: SashaPadula,
     description: "Tecnico veterinario specializzato nell'assistenza clinica.",
   },
 ]
 
 export function Team() {
-  function getImgUrl(name) {
-    return new URL(`${name}`, import.meta.url).href
-  }
-
   return (
     <section id="team" className="py-24 bg-background">
       <div className="container mx-auto px-4 lg:px-8">
@@ -159,18 +165,15 @@ export function Team() {
               <div className="bg-surface rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-surface-dark group h-full">
                 <div className="aspect-square overflow-hidden bg-muted min-h-[400px]">
                   <img
-                    src={getImgUrl(member.image)}
+                    src={member.image}
                     alt={member.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
                 <div className="p-6 min-h-[160px]">
                   <h3 className="text-lg font-bold text-foreground mb-1">{member.name}</h3>
-                  {member.position && <p className="text-sm font-semibold text-accent mb-3">{member.position}</p>}
-                  {member.description && (
-                    <p className="text-sm text-muted-foreground leading-relaxed">{member.description}</p>
-
-                  )}
+                  <p className="text-sm font-semibold text-accent mb-3">{member.position}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{member.description}</p>
                 </div>
               </div>
             </SwiperSlide>
