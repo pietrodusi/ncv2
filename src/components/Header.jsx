@@ -25,13 +25,13 @@ export function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all ease-in-out ${isScrolled ? "duration-700 bg-background/95 backdrop-blur-md shadow-md" : "duration-200 bg-transparent "} ${isMobileMenuOpen ? "" : ""}  
+      className={`fixed top-0 left-0 right-0 z-50 transition-all ease-in-out ${isScrolled || isMobileMenuOpen ? "duration-700 bg-background/95 backdrop-blur-md shadow-md" : "duration-200 bg-transparent "}}  
       `}
     >
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <a href="/" className="flex items-center gap-2 group">
-            <div className={`relative w-34 ${isScrolled ? "md:ml-40" : "md:w-150 md:pt-50 drop-shadow-[0_0_30px_rgba(0,44,60,0.9)]"} transition-all duration-400 ease-in-out`}>
+            <div className={`relative w-34 ${isScrolled || isMobileMenuOpen ? "md:ml-40" : "md:w-150 md:pt-50 md:mt-30 w-80 mt-30 drop-shadow-[0_0_30px_rgba(0,44,60,0.9)]"} transition-all duration-400 ease-in-out`}>
               <img src={logo} alt="NCV Logo" className="w-full h-full object-contain " />
             </div>
           </a>
@@ -56,7 +56,7 @@ export function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 text-foreground hover:text-primary transition-colors"
+            className="md:hidden p-2 text-[#002c66] hover:text-primary transition-colors"
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -75,7 +75,7 @@ export function Header() {
                       setIsMobileMenuOpen(false)
                       document.getElementById(item.href).scrollIntoView()
                     }}
-                    className="text-sm font-medium text-foreground hover:text-primary transition-colors py-2"
+                    className="text-sm font-medium text-[#002c66] hover:text-primary transition-colors py-2"
                   >
                     {item.label}
                   </a>
