@@ -30,7 +30,7 @@ export function Header() {
     >
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          <a href="/" className="flex items-center gap-2 group">
+          <a onClick={() => document.getElementById("home").scrollIntoView()} className="flex items-center gap-2 group">
             <div className={`relative w-34 ${isScrolled || isMobileMenuOpen ? "md:ml-40" : "md:w-150 md:pt-50 md:mt-30 w-80 mt-30 drop-shadow-[0_0_30px_rgba(0,44,60,0.9)]"} transition-all duration-400 ease-in-out`}>
               <img src={logo} alt="NCV Logo" className="w-full h-full object-contain " />
             </div>
