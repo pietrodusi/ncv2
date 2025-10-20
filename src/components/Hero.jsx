@@ -35,7 +35,7 @@ export function Hero() {
             </span> */}
           </div>
 
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-100 leading-tight text-balance">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground md:mb-100 mb-30 leading-tight text-balance">
             {/* Nuova Clinica Veterinaria <span className="text-primary">Val d'Elsa</span> */}
           </h1>
 

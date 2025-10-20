@@ -104,8 +104,8 @@ export function Contacts() {
 
               {/* Social Links */}
               <div className="pt-4 border-t border-border">
-                <h3 className="font-semibold text-foreground mb-4">Seguici sui social</h3>
-                <div className="flex gap-8">
+                <h3 className="font-semibold text-foreground mb-6">Seguici sui social</h3>
+                <div className="flex gap-8 flex-col md:flex-row">
                   <a
                     href="https://wa.me/390577938997"
                     target="_blank"

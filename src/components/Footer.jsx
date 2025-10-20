@@ -42,7 +42,7 @@ export function Footer() {
           </div>
 
           {/* Contact */}
-          <div>
+          <div className="">
             <h3 className="font-bold mb-4">Contatti</h3>
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-2">
