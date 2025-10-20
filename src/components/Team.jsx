@@ -1,5 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Navigation, Pagination, Autoplay } from "swiper/modules"
+import { useRef, useEffect, useState } from "react"
 import "swiper/css"
 import "swiper/css/navigation"
 import "swiper/css/pagination"
@@ -116,6 +117,38 @@ const teamData = [
 ]
 
 export function Team() {
+  const swiperRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        // Update visibility state
+        setIsVisible(entry.isIntersecting);
+
+        // Control autoplay based on visibility
+        const swiper = swiperRef.current?.swiper;
+        if (swiper) {
+          if (entry.isIntersecting) {
+            swiper.autoplay.start();
+          } else {
+            swiper.autoplay.stop();
+          }
+        }
+      },
+      {
+        threshold: 0.1 // Trigger when at least 10% of the component is visible
+      }
+    );
+
+    // Start observing the Swiper container
+    if (swiperRef.current) {
+      observer.observe(swiperRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section id="team" className="py-24 bg-background">
       <div className="container mx-auto px-4 lg:px-8">
@@ -135,14 +168,17 @@ export function Team() {
         </div>
 
         <Swiper
+          ref={swiperRef}
           modules={[Navigation, Pagination, Autoplay]}
           spaceBetween={32}
           slidesPerView={1}
           navigation
           pagination={{ clickable: true }}
+          speed={800}
+          effect="slide"
           autoplay={{
             delay: 3000,
-            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
           }}
           breakpoints={{
             640: {
@@ -162,8 +198,8 @@ export function Team() {
         >
           {teamData.map((member) => (
             <SwiperSlide key={member.id}>
-              <div className="bg-surface rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-surface-dark group h-full">
-                <div className="aspect-square overflow-hidden bg-muted min-h-[400px]">
+              <div className="bg-surface rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-surface-dark group h-full">
+                <div className="aspect-square overflow-hidden bg-muted min-h-[400px] filter grayscale-65 hover:grayscale-0 transition duration-500 ease-in-out">
                   <img
                     src={member.image}
                     alt={member.name}
@@ -180,6 +216,6 @@ export function Team() {
           ))}
         </Swiper>
       </div>
-    </section>
+    </section >
   )
 }
