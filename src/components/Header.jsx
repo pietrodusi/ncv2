@@ -36,12 +36,12 @@ export function Header() {
           </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-10">
             {navItems.map((item) => (
               <a
                 key={item.href}
                 onClick={() => document.getElementById(item.href).scrollIntoView()}
-                className="text-m font-medium text-foreground hover:text-primary transition-colors relative group text-ncvColor-blue hover:cursor-pointer"
+                className={`text-lg font-medium transition-colors relative group text-ncvColor-grey hover:cursor-pointer ${isScrolled ? "hover:text-primary" : "text-white"}`}
               >
                 {item.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-ncvColor-orange transition-all group-hover:w-full" />

@@ -9,7 +9,7 @@ const teamData = [
     id: 1,
     name: "Dott. Giacomo Dusi",
     position: "Direttore sanitario",
-    image: "/placeholder.svg?height=400&width=400",
+    image: "hero-image.jpg",
     description: "Si occupa principalmente di chirurgia, chirurgia mini-invasiva ed endoscopia.",
   },
   {
@@ -100,12 +100,16 @@ const teamData = [
     id: 14,
     name: "Sasha Padula",
     position: "Tecnico veterinario",
-    image: "/placeholder.svg?height=400&width=400",
+    image: "/SashaPadula.png",
     description: "Tecnico veterinario specializzato nell'assistenza clinica.",
   },
 ]
 
 export function Team() {
+  function getImgUrl(name) {
+    return new URL(`${name}`, import.meta.url).href
+  }
+
   return (
     <section id="team" className="py-24 bg-background">
       <div className="container mx-auto px-4 lg:px-8">
@@ -153,18 +157,19 @@ export function Team() {
           {teamData.map((member) => (
             <SwiperSlide key={member.id}>
               <div className="bg-surface rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-surface-dark group h-full">
-                <div className="aspect-square overflow-hidden bg-muted">
+                <div className="aspect-square overflow-hidden bg-muted min-h-[400px]">
                   <img
-                    src={member.image || "/placeholder.svg"}
+                    src={getImgUrl(member.image)}
                     alt={member.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
-                <div className="p-6">
+                <div className="p-6 min-h-[160px]">
                   <h3 className="text-lg font-bold text-foreground mb-1">{member.name}</h3>
                   {member.position && <p className="text-sm font-semibold text-accent mb-3">{member.position}</p>}
                   {member.description && (
                     <p className="text-sm text-muted-foreground leading-relaxed">{member.description}</p>
+
                   )}
                 </div>
               </div>

@@ -1,12 +1,12 @@
 import { Facebook, Instagram, Mail, Phone, MapPin } from "lucide-react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { faWhatsapp, faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import ncvLogo from '../public/LOGO DEFINITIVO-03.png';
 import cvitLogo from '../public/logocvit-17-17.png';
 
 export function Footer() {
   return (
-    <footer id="footer" className="bg-[#002c66]  text-background py-16">
+    <footer id="footer" className="bg-[#002c66]  text-background pt-12 pb-6">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
@@ -68,21 +68,21 @@ export function Footer() {
                     className="w-9 h-9 bg-background/10 hover:bg-accent rounded-lg flex items-center justify-center transition-colors"
                     aria-label="Facebook"
                   >
-                    <FontAwesomeIcon icon={faWhatsapp} size={18} />
+                    <FontAwesomeIcon icon={faWhatsapp} size={26} />
                   </a>
                   <a
                     href="#"
                     className="w-9 h-9 bg-background/10 hover:bg-accent rounded-lg flex items-center justify-center transition-colors"
                     aria-label="Facebook"
                   >
-                    <Facebook size={18} />
+                    <FontAwesomeIcon icon={faFacebook} size={18} />
                   </a>
                   <a
                     href="#"
                     className="w-9 h-9 bg-background/10 hover:bg-accent rounded-lg flex items-center justify-center transition-colors"
                     aria-label="Instagram"
                   >
-                    <Instagram size={18} />
+                    <FontAwesomeIcon icon={faInstagram} size={18} />
                   </a>
                 </div>
               </li>

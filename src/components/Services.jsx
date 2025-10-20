@@ -4,7 +4,6 @@ import {
   Scissors,
   Activity,
   Pill,
-  Heart,
   Shield,
   Microscope,
   Bone,
@@ -12,10 +11,11 @@ import {
   PawPrint,
   Eye,
   Apple,
-  Baby,
   Calendar,
   Video,
+  Dog
 } from "lucide-react"
+import { PiToothBold } from 'react-icons/pi';
 
 const servicesData = [
   {
@@ -58,7 +58,7 @@ const servicesData = [
     name: "Odontostomatologia",
     description:
       "Cure dentali complete: pulizia, estrazioni, trattamento di patologie orali e chirurgia maxillo-facciale.",
-    icon: Heart,
+    icon: PiToothBold,
   },
   {
     id: 7,
@@ -108,7 +108,7 @@ const servicesData = [
     id: 14,
     name: "Riproduzione e ostetricia",
     description: "Assistenza al ciclo riproduttivo, diagnosi di gravidanza e gestione del parto.",
-    icon: Baby,
+    icon: Dog,
   },
   {
     id: 15,
@@ -150,10 +150,10 @@ export function Services() {
                 key={service.id}
                 className="bg-background rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-surface-dark group"
               >
-                <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
+                <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-3 group-hover:bg-accent/20 transition-colors">
                   <Icon className="w-6 h-6 text-accent" />
                 </div>
-                <h3 className="text-lg font-bold text-foreground mb-2">{service.name}</h3>
+                <h3 className="text-lg font-bold text-foreground mb-3">{service.name}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{service.description}</p>
               </div>
             )

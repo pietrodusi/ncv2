@@ -28,20 +28,22 @@ export function Hero() {
 
       {/* Content */}
       <div className="container mx-auto px-4 lg:px-8 relative z-30">
-        <div className="max-w-3xl">
+        <div className="max-w-3xl md:max-w-6xl md:ml-40">
           <div className="inline-block mb-6">
             <span className="text-sm font-semibold text-accent bg-accent/10 px-4 py-2 rounded-full">
               {/* Dal 2016 al vostro servizio */}
             </span>
           </div>
 
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight text-balance">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-100 leading-tight text-balance">
             {/* Nuova Clinica Veterinaria <span className="text-primary">Val d'Elsa</span> */}
           </h1>
 
-          <p className="text-lg md:text-xl text-muted leading-relaxed mb-8 text-pretty">
-            Dal 2016 ci prendiamo cura dei vostri animali con passione, competenza e dedizione. Una struttura moderna
-            con spazi accoglienti, tecnologie avanzate e un team medico altamente qualificato.
+          <p className="text-lg font-semibold md:text-xl text-muted leading-relaxed mb-2 text-pretty">
+            Dal 2016 ci prendiamo cura dei vostri animali con passione, competenza e dedizione.
+          </p>
+          <p className="text-lg font-semibold md:text-xl text-muted leading-relaxed mb-8 text-pretty">
+            Una struttura moderna con spazi accoglienti, tecnologie avanzate e un team medico altamente qualificato.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 mb-12">

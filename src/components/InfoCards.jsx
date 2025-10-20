@@ -35,7 +35,7 @@ export function InfoCards() {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="grid md:grid-cols-3 gap-6">
           <div
-            className={`bg-surface rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-400 hover:-translate-y-1 border border-surface-dark transform ${isScrolled ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+            className={`bg-surface rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-400 border border-surface-dark transform ${isScrolled ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
             style={{
               transitionDelay: `${1 * 100}ms`,
             }}
@@ -59,7 +59,7 @@ export function InfoCards() {
             </div>
           </div>
           <div
-            className={`bg-surface rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-400 hover:-translate-y-1 border border-surface-dark transform ${isScrolled ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+            className={`bg-surface rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-400 border border-surface-dark transform ${isScrolled ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
             style={{
               transitionDelay: `${2 * 100}ms`,
             }}
@@ -124,7 +124,7 @@ export function InfoCards() {
             </div>
           </div>
           <div
-            className={`bg-surface rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-400 hover:-translate-y-1 border border-surface-dark transform ${isScrolled ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+            className={`bg-surface rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-400 border border-surface-dark transform ${isScrolled ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
             style={{
               transitionDelay: `${3 * 100}ms`,
             }}
@@ -158,38 +158,6 @@ export function InfoCards() {
             </div>
           </div>
         </div>
-
-
-        {/* <div className="grid md:grid-cols-3 gap-6">
-          {cards.map((card, index) => {
-            const Icon = card.icon
-            return (
-              <div
-                key={index}
-                className={`bg-surface rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-400 hover:-translate-y-1 border border-surface-dark
-    transform ${isScrolled ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}
-  `}
-                style={{
-                  transitionDelay: `${index * 100}ms`,
-                }}
-              >
-                <div className="flex items-center gap-6 mb-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
-                    <Icon className="w-6 h-6 text-primary" />
-                  </div>
-                  <h3 className="text-xl font-bold text-foreground mb-4 text-ncvColor-blue">{card.title}</h3>
-                </div>
-                <div className="space-y-2">
-                  {card.content.map((line, i) => (
-                    <p key={i} className="leading-relaxed">
-                      {line}
-                    </p>
-                  ))}
-                </div>
-              </div>
-            )
-          })}
-        </div> */}
       </div>
     </section>
   )
