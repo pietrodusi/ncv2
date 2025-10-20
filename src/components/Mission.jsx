@@ -35,13 +35,13 @@ export function Mission() {
               salute del cane, del gatto e degli animali esotici in tutta la Valdelsa e oltre.
             </p>
 
-            <p className="text-lg text-muted leading-relaxed mb-8 text-pretty text-muted-foreground">
+            <p className="text-lg text-muted leading-relaxed mb-8 text-pretty text-justify text-muted-foreground">
               Alla Nuova Clinica Veterinaria Val d'Elsa crediamo in una medicina che non si limita a curare, ma che
               lavora ogni giorno per prevenire, educare e accompagnare. Il benessere animale è al centro di ogni nostra
               decisione, e l'attenzione verso i nostri pazienti e le loro famiglie va oltre il gesto clinico.
             </p>
 
-            <p className="text-lg text-muted leading-relaxed mb-8 text-pretty text-muted-foreground">
+            <p className="text-lg text-muted leading-relaxed mb-8 text-pretty text-justify text-muted-foreground">
               Dal 2025 la Clinica è guidata dal dottor Giacomo Dusi e dalla dottoressa Laura Carraresi, affiancati da uno
               staff motivato e in costante aggiornamento.
             </p>
