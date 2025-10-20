@@ -138,6 +138,7 @@ body {
   height: 48px;
   border-radius: 50%;
   transition: all 0.3s ease;
+
 }
 
 .team-swiper .swiper-button-next:hover,
@@ -169,4 +170,12 @@ body {
 
 .team-swiper .swiper-pagination {
   bottom: 20px !important;
+}
+
+@media (max-width: 767px) {
+
+  .team-swiper .swiper-button-next,
+  .team-swiper .swiper-button-prev {
+    display: none !important;
+  }
 }
