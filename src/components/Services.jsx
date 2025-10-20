@@ -154,7 +154,7 @@ export function Services() {
                   <Icon className="w-6 h-6 text-accent" />
                 </div>
                 <h3 className="text-lg font-bold text-foreground mb-3">{service.name}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{service.description}</p>
+                <p className="text-sm text-muted-foreground leading-relaxed text-pretty">{service.description}</p>
               </div>
             )
           })}
