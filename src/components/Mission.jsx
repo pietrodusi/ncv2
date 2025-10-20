@@ -1,5 +1,5 @@
 import { Heart, Shield, Users } from "lucide-react"
-import image from "../public/istockphoto-968955866-1024x1024.jpg";
+import image from "../public/ncv_orizzontale_170725.JPG";
 
 export function Mission() {
   return (

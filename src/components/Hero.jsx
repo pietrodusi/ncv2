@@ -1,7 +1,6 @@
 import { Button } from "./ui/Button"
 import { ArrowRight, Phone } from "lucide-react"
 import videoSource from '../public/istockphoto-1456786353-640_adpp_is.mp4';
-import heroImage from '../public/istockphoto-2217207866-1024x1024.jpg';
 
 export function Hero() {
   return (
