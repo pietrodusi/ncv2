@@ -39,12 +39,14 @@ export function Hero() {
             {/* Nuova Clinica Veterinaria <span className="text-primary">Val d'Elsa</span> */}
           </h1>
 
-          <p className="text-lg font-semibold md:text-xl text-muted leading-relaxed mb-2 text-pretty">
-            Dal 2016 ci prendiamo cura dei vostri animali con passione, competenza e dedizione.
-          </p>
-          <p className="text-lg font-semibold md:text-xl text-muted leading-relaxed mb-8 text-pretty">
-            Una struttura moderna con spazi accoglienti, tecnologie avanzate e un team medico altamente qualificato.
-          </p>
+          <div className="[text-shadow:0_1px_4px_rgba(0,0,0,0.8),0_0_20px_rgba(0,0,0,0.4)]">
+            <p className="text-lg font-semibold md:text-xl text-muted leading-relaxed mb-2 text-pretty">
+              Dal 2016 ci prendiamo cura dei vostri animali con passione, competenza e dedizione.
+            </p>
+            <p className="text-lg font-semibold md:text-xl text-muted leading-relaxed mb-8 text-pretty">
+              Una struttura moderna con spazi accoglienti, tecnologie avanzate e un team medico altamente qualificato.
+            </p>
+          </div>
 
           <div className="flex flex-col sm:flex-row gap-4 mb-12">
             <Button size="lg" className="bg-primary hover:bg-primary-hover text-white group" onClick={() => document.getElementById("contatti").scrollIntoView()}>

@@ -25,13 +25,14 @@ export function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all ease-in-out ${isScrolled ? "duration-700 bg-background/95 backdrop-blur-md shadow-md" : "duration-200 bg-transparent"} ${isMobileMenuOpen ? "" : ""}`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all ease-in-out ${isScrolled ? "duration-700 bg-background/95 backdrop-blur-md shadow-md" : "duration-200 bg-transparent "} ${isMobileMenuOpen ? "" : ""}  
+      `}
     >
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <a href="/" className="flex items-center gap-2 group">
-            <div className={`relative w-34 ${isScrolled ? "md:ml-40" : "md:w-150 md:pt-50"} transition-all duration-400 ease-in-out`}>
-              <img src={logo} alt="NCV Logo" className="w-full h-full object-contain" />
+            <div className={`relative w-34 ${isScrolled ? "md:ml-40" : "md:w-150 md:pt-50 drop-shadow-[0_0_30px_rgba(0,44,60,0.9)]"} transition-all duration-400 ease-in-out`}>
+              <img src={logo} alt="NCV Logo" className="w-full h-full object-contain " />
             </div>
           </a>
 
@@ -41,7 +42,7 @@ export function Header() {
               <a
                 key={item.href}
                 onClick={() => document.getElementById(item.href).scrollIntoView()}
-                className={`text-lg font-medium transition-colors relative group text-ncvColor-grey hover:cursor-pointer ${isScrolled ? "hover:text-primary" : "text-white"}`}
+                className={`text-lg font-medium transition-colors relative group text-ncvColor-grey hover:cursor-pointer ${isScrolled ? "hover:text-primary" : "text-white [text-shadow:0_1px_4px_rgba(0,0,0,0.8),0_0_20px_rgba(0,0,0,0.6)]"}`}
               >
                 {item.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-ncvColor-orange transition-all group-hover:w-full" />
