@@ -4,7 +4,7 @@ import videoSource from '../public/istockphoto-1456786353-640_adpp_is.mp4';
 
 export function Hero() {
   return (
-    <section id="home" className="relative min-h-screen flex items-center pt-20 w-full">
+    <section id="home" className="relative min-h-[100dvh] flex items-center pt-20 w-full">
       {/* Background Image with Overlay */}
       {/* <div className="absolute inset-0 z-0">
         <img src={heroImage} alt="Veterinary care" className="w-full h-full object-cover" />

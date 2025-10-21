@@ -4,6 +4,9 @@ import { useRef, useEffect, useState } from "react"
 import "swiper/css"
 import "swiper/css/navigation"
 import "swiper/css/pagination"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCaretLeft, faCaretRight } from '@fortawesome/free-solid-svg-icons';
+
 
 import SashaPadula from '../public/team/SashaPadula.jpg'
 import FrancescoPaesano from '../public/team/FrancescoPaesano.jpg'
@@ -149,9 +152,18 @@ export function Team() {
     return () => observer.disconnect();
   }, []);
 
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    // Wait for refs to mount
+    setReady(true);
+  }, []);
+
   return (
-    <section id="team" className="py-24 bg-background">
-      <div className="container mx-auto px-4 lg:px-8">
+    <section id="team" className="py-24 bg-background relative">
+      <div className="container mx-auto px-4 lg:px-8 relative">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-block mb-4">
             <span className="text-sm font-semibold text-primary bg-primary/10 px-4 py-2 rounded-full">
@@ -167,55 +179,77 @@ export function Team() {
           </p>
         </div>
 
-        <Swiper
-          ref={swiperRef}
-          modules={[Navigation, Pagination, Autoplay]}
-          spaceBetween={32}
-          slidesPerView={1}
-          navigation
-          pagination={{ clickable: true }}
-          speed={800}
-          effect="slide"
-          autoplay={{
-            delay: 3000,
-            pauseOnMouseEnter: true,
-          }}
-          breakpoints={{
-            640: {
-              slidesPerView: 2,
-              spaceBetween: 24,
-            },
-            1024: {
-              slidesPerView: 3,
-              spaceBetween: 32,
-            },
-            1280: {
-              slidesPerView: 4,
-              spaceBetween: 32,
-            },
-          }}
-          className="team-swiper"
-        >
-          {teamData.map((member) => (
-            <SwiperSlide key={member.id}>
-              <div className="bg-surface rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-surface-dark group h-full">
-                <div className="aspect-square overflow-hidden bg-muted min-h-[400px] filter md:grayscale hover:grayscale-0 transition duration-500 ease-in-out">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <div className="p-6 min-h-[160px]">
-                  <h3 className="text-lg font-bold text-foreground mb-1">{member.name}</h3>
-                  <p className="text-sm font-semibold text-accent mb-3">{member.position}</p>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{member.description}</p>
-                </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+        <div className="relative">
+          {/* Custom Navigation Buttons */}
+          <div className="max-md:hidden">
+            <button
+              ref={prevRef}
+              className="group swiper-button-prev absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-background/20 rounded-full shadow-md hover:bg-ncvColor-orange/80 !w-16 !h-16 flex items-center justify-center transition-colors duration-300"
+            >
+              <FontAwesomeIcon
+                icon={faCaretLeft}
+                className="text-foreground/60 group-hover:text-foreground transition-colors duration-300"
+              />
+            </button>
+
+            <button
+              ref={nextRef}
+              className="group swiper-button-next absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-background/20 rounded-full shadow-md hover:bg-ncvColor-orange/80 !w-16 !h-16 flex items-center justify-center transition-colors duration-300"
+            >
+              <FontAwesomeIcon
+                icon={faCaretRight}
+                className="text-foreground/60 group-hover:text-foreground transition-colors duration-300"
+              />
+            </button>
+
+          </div>
+
+          {/* Swiper */}
+          {ready && (
+            <Swiper
+              ref={swiperRef}
+              modules={[Navigation, Pagination, Autoplay]}
+              spaceBetween={32}
+              slidesPerView={1}
+              navigation={{
+                prevEl: prevRef.current,
+                nextEl: nextRef.current,
+              }}
+              pagination={{ clickable: true }}
+              speed={1500}
+              effect="slide"
+              autoplay={{ delay: 1500, pauseOnMouseEnter: true }}
+              breakpoints={{
+                640: { slidesPerView: 2, spaceBetween: 24 },
+                1024: { slidesPerView: 3, spaceBetween: 32 },
+                1280: { slidesPerView: 4, spaceBetween: 32 },
+              }}
+              className="team-swiper"
+            >
+              {teamData.map((member) => (
+                <SwiperSlide key={member.id}>
+                  <div className="bg-surface rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-surface-dark group h-full">
+                    <div className="aspect-square overflow-hidden bg-muted min-h-[400px] filter md:grayscale hover:grayscale-0 transition duration-500 ease-in-out">
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="w-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                    <div className="p-6 min-h-[160px]">
+                      <h3 className="text-lg font-bold text-foreground mb-1">{member.name}</h3>
+                      <p className="text-sm font-semibold text-accent mb-3">{member.position}</p>
+                      <p className="text-sm text-muted-foreground leading-relaxed">{member.description}</p>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          )}
+        </div>
+
+
       </div>
-    </section >
+    </section>
   )
 }
