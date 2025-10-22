@@ -8,7 +8,7 @@ export function Hero() {
   console.log(navigator.userAgentData.mobile);
 
   return (
-    <section id="home" className="relative h-[100lvh] flex items-center w-full">
+    <section id="home" className="relative min-h-[100svh] flex items-center w-full">
       {/* Background Image with Overlay */}
       {/* <div className="absolute inset-0 z-0">
         <img src={heroImage} alt="Veterinary care" className="w-full h-full object-cover" />
