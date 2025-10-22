@@ -136,13 +136,13 @@ export function Services() {
               Servizi
             </span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 text-balance">
+          <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6 text-balance">
             Cure complete per i vostri animali
           </h2>
 
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid lg:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {servicesData.map((service) => {
             const Icon = service.icon
             return (

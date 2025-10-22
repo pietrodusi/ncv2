@@ -8,7 +8,7 @@ export function Footer() {
   return (
     <footer id="footer" className="bg-[#002c66] text-background pt-12 pb-6">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div className="grid lg:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div className="w-70">
             <img src={cvitLogo} alt="CVIT Logo" className="w-full h-full object-contain brightness-0 invert" />

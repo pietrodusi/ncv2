@@ -3,7 +3,7 @@ import image from "../public/ncv_orizzontale_170725.JPG";
 
 export function Mission() {
   return (
-    <section id="chi-siamo" className="py-24 md:py-36 bg-background">
+    <section id="chi-siamo" className="py-24 lg:py-36 bg-background">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Image */}
@@ -26,7 +26,7 @@ export function Mission() {
               </span>
             </div>
 
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 text-balance">
+            <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6 text-balance">
               Medicina preventiva e cura dedicata
             </h2>
 

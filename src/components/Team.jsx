@@ -170,7 +170,7 @@ export function Team() {
               Il nostro team
             </span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 text-balance">
+          <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6 text-balance">
             Professionisti dedicati alla cura dei vostri animali
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed text-pretty">
@@ -181,7 +181,7 @@ export function Team() {
 
         <div className="relative">
           {/* Custom Navigation Buttons */}
-          <div className="max-md:hidden">
+          <div className="max-lg:hidden">
             <button
               ref={prevRef}
               className="group swiper-button-prev absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-background/20 rounded-full shadow-md hover:bg-ncvColor-orange/80 !w-16 !h-16 flex items-center justify-center transition-colors duration-300"
@@ -229,7 +229,7 @@ export function Team() {
               {teamData.map((member) => (
                 <SwiperSlide key={member.id}>
                   <div className="bg-surface rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-surface-dark group h-full">
-                    <div className="aspect-square overflow-hidden bg-muted min-h-[400px] filter md:grayscale hover:grayscale-0 transition duration-500 ease-in-out">
+                    <div className="aspect-square overflow-hidden bg-muted min-h-[400px] filter lg:grayscale hover:grayscale-0 transition duration-500 ease-in-out">
                       <img
                         src={member.image}
                         alt={member.name}

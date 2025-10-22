@@ -33,9 +33,9 @@ export function InfoCards() {
   }, [])
 
   return (
-    <section className="relative -mt-10 md:-mt-50 z-20">
+    <section className="relative -mt-10 lg:-mt-50 z-20">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="grid md:grid-cols-3 md:gap-6 gap-3">
+        <div className="grid lg:grid-cols-3 lg:gap-6 gap-3">
           <div
             className={`bg-surface rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-400 border border-surface-dark transform ${isScrolled ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
             style={{
@@ -88,7 +88,7 @@ export function InfoCards() {
               </p>
               <p className="leading-relaxed">
               </p>
-              <div className="flex flex-col gap-4 md:flex-row md:gap-10 mt-4">
+              <div className="flex flex-col gap-4 lg:flex-row lg:gap-10 mt-4">
                 <a
                   href="https://wa.me/390577938997"
                   target="_blank"

@@ -4,7 +4,7 @@ import { faWhatsapp, faFacebook, faInstagram } from '@fortawesome/free-brands-sv
 
 export function Contacts() {
   return (
-    <section id="contatti" className="py-24 bg-muted/80 md:pb-54 pb-25">
+    <section id="contatti" className="py-24 bg-muted/80 lg:pb-54 pb-25">
       <div className="container mx-auto px-4 lg:px-8">
 
         <div className="text-center max-w-3xl mx-auto mb-20">
@@ -13,13 +13,13 @@ export function Contacts() {
               Contatti
             </span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 text-balance">
+          <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6 text-balance">
             Come raggiungerci
           </h2>
         </div>
 
         <div className="flex flex-col lg:flex-row gap-12">
-          <div className="w-full lg:w-1/2 h-72 md:h-[400px] lg:h-[500px]">
+          <div className="w-full lg:w-1/2 h-72 lg:h-[400px] lg:h-[500px]">
             <iframe
               title="Mappa Nuova Clinica Veterinaria Val d'Elsa"
               className="w-full h-full rounded-2xl shadow-md"
@@ -105,7 +105,7 @@ export function Contacts() {
               {/* Social Links */}
               <div className="pt-4 border-t border-border">
                 <h3 className="font-semibold text-foreground mb-6">Seguici sui social</h3>
-                <div className="flex gap-8 flex-col md:flex-row">
+                <div className="flex gap-8 flex-col lg:flex-row">
                   <a
                     href="https://wa.me/390577938997"
                     target="_blank"
