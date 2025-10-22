@@ -8,7 +8,7 @@ export function Hero() {
   console.log(navigator.userAgentData.mobile);
 
   return (
-    <section id="home" className="relative min-h-[100svh] flex items-center w-full">
+    <section id="home" className="relative h-[100svh] flex items-center w-full">
       {/* Background Image with Overlay */}
       {/* <div className="absolute inset-0 z-0">
         <img src={heroImage} alt="Veterinary care" className="w-full h-full object-cover" />
@@ -31,7 +31,7 @@ export function Hero() {
 
       {/* Content */}
       {/* <div className="container mx-auto relative z-30 pt-[10%]"> */}
-      <div className="container relative mx-auto z-30 max-w-3xl lg:max-w-6xl px-8 lg:mt-[40lvh] mt-[60lvh]">
+      <div className="container relative mx-auto z-30 max-w-3xl lg:max-w-6xl px-8 lg:mt-[40lvh] mt-20">
         <div className="[text-shadow:0_1px_4px_rgba(0,0,0,0.8),0_0_20px_rgba(0,0,0,0.4)]">
           <p className="text-lg font-semibold lg:text-xl text-muted leading-relaxed mb-2 text-pretty">
             Dal 2016 ci prendiamo cura dei vostri animali con passione, competenza e dedizione.
@@ -47,8 +47,8 @@ export function Hero() {
             <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
           </Button>
         </div>
-        {/* </div> */}
       </div>
+      {/* </div> */}
     </section >
   )
 }
