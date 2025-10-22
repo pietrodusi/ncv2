@@ -33,7 +33,7 @@ export function InfoCards() {
   }, [])
 
   return (
-    <section className="relative -mt-10 lg:-mt-50 z-20">
+    <section className="relative lg:-mt-20 z-20">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="grid lg:grid-cols-3 lg:gap-6 gap-3">
           <div
